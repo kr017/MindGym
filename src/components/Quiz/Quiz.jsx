@@ -15,6 +15,7 @@ export const Quiz = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   //   const [isPrev, setIsPrev] = useState(false);
+  // eslint-disable-next-line
   const [isNext, setIsNext] = useState(true);
   const [score, setScore] = useState(0);
   const [showWarning, setShowWarning] = useState(false);
@@ -28,6 +29,7 @@ export const Quiz = () => {
       });
       setCurrentQuestion(res.data.data[0]);
     });
+    // eslint-disable-next-line
   }, []);
 
   const handleNextClick = ans => {
@@ -38,14 +40,14 @@ export const Quiz = () => {
         item => item._id === currentQuestion._id
       );
       if (ans) {
-        if (currentQuestion.answer == ans) {
+        if (currentQuestion.answer === ans) {
           setScore(prevScore => prevScore + 4);
         } else {
           setScore(prevScore => prevScore - 1);
         }
       }
 
-      if (index != quizState?.questions?.length - 1) {
+      if (index !== quizState?.questions?.length - 1) {
         setIsNext(true);
       } else {
         setIsNext(false);

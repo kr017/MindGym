@@ -1,8 +1,16 @@
-import { useFormik, FormikProvider, ErrorMessage } from "formik";
+import { ErrorMessage } from "formik";
 
 export const Input = props => {
-  const { id, type, value, name, error, placeholder, handleChange, style } =
-    props;
+  const {
+    id,
+    type,
+    value,
+    name,
+    error,
+    placeholder,
+    handleChange,
+    // style
+  } = props;
 
   /*bg-gray-200*/
   return (

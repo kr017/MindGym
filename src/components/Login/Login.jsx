@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { useFormik, FormikProvider } from "formik";
 import * as yup from "yup";
-
-import { toast } from "react-toastify";
 
 import { Button, Input } from "../Common";
 import { Header } from "../../components";
@@ -113,12 +110,12 @@ export const Login = () => {
                 <div className="flex justify-center">
                   <Button label="Login" type="submit" form="login-form" />
                 </div>
-                <a
+                <span
                   className="flex justify-center my-2"
                   onClick={() => history.push("/signup")}
                 >
                   New User? Register here
-                </a>
+                </span>
               </div>
             </form>
           </FormikProvider>

@@ -8,6 +8,7 @@ export const DashboardContent = () => {
 
   useEffect(() => {
     fetchContent();
+    // eslint-disable-next-line
   }, [path.pathname]);
   const fetchContent = () => {
     switch (path.pathname) {

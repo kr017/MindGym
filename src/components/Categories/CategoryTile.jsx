@@ -1,13 +1,9 @@
-import { Button, Input } from "../Common";
-import { Footer, Header, Sidebar } from "..";
-import { JS } from "../../svg";
-import { useLogin } from "../../context";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 
 export const CategoryTile = props => {
   const history = useHistory();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const { label, image, bgColor } = props.details;
   return (
     <div

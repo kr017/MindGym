@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { PrivateRoutes } from "./PrivateRoutes";
 
-import { Header, Footer, Login, Signup, Dashboard } from "./components";
+import { Login, Signup, Dashboard } from "./components";
 
 function App() {
   return (

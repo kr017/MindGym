@@ -1,7 +1,5 @@
-import { Button, Input } from "../Common";
-import { Footer, Header, Sidebar, CategoryTile } from "../../components";
+import { CategoryTile } from "../../components";
 import { JS, HTML, CSS } from "../../svg";
-import { useLogin } from "../../context";
 import { useEffect } from "react";
 import { getQuestions } from "../../apis/userService";
 export const CategoriesList = () => {

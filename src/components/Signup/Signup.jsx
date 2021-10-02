@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { useFormik, FormikProvider } from "formik";
@@ -120,12 +120,12 @@ export const Signup = () => {
                 <div className="flex justify-center">
                   <Button label="Signup" type="submit" form="signup-form" />
                 </div>
-                <a
+                <span
                   className="flex justify-center my-2"
                   onClick={() => history.push("/login")}
                 >
                   Already registered? Login here
-                </a>
+                </span>
               </div>
             </form>
           </FormikProvider>

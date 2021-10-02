@@ -1,5 +1,3 @@
-import { Button } from "../Common";
-
 export const QuestionCard = props => {
   const { details, currentIndex, handleNextClick } = props;
   const handleOptionClick = option => {
