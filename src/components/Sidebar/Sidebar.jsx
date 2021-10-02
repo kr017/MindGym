@@ -56,7 +56,7 @@ export const Sidebar = () => {
       </nav>
 
       <nav className="px-4 md:pb-0 ">
-        <NavTile
+        {/*  <NavTile
           icon={
             <div className="relative w-12 h-12">
               <img
@@ -69,7 +69,7 @@ export const Sidebar = () => {
             </div>
           }
           label="Leaderboard"
-        />
+        /> */}
 
         <NavTile
           icon={
