@@ -1,25 +1,53 @@
 const colors = require("tailwindcss/colors");
-
+function withOpacity(variableName) {
+  // return ({ opacityValue }) => {
+  //   if (opacityValue) {
+  //     return `rgba(var(${variableName}), ${opacityValue})`;
+  //   }
+  return `rgb(var(${variableName}))`;
+  // };
+}
 module.exports = {
   purge: [],
   presets: [],
   darkMode: "class", // or 'class'
   theme: {
+    // we want to extend the current colors instead of replacing them
+    extend: {
+      // this will generate utilities like `bg-base` and `bg-primary`
+      backgroundColor: {
+        base: withOpacity("--color-base"),
+        "off-base": withOpacity("--color-off-base"),
+        primary: withOpacity("--color-primary"),
+        secondary: withOpacity("--color-secondary"),
+        muted: withOpacity("--color-text-muted"),
+      },
+      // these classes end up like `text-base` and `text-primary`
+      textColor: {
+        base: withOpacity("--color-text-base"),
+        muted: withOpacity("--color-text-muted"),
+        "muted-offset": withOpacity("--color-muted-offset"),
+        primary: withOpacity("--color-primary"),
+        secondary: withOpacity("--color-secondary"),
+      },
+    },
     screens: {
+      xs: "375px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
     },
+
     colors: {
       transparent: "transparent",
       current: "currentColor",
 
-      black: colors.black,
+      black: { light: "#b3bcf5", DEFAULT: "#5c6ac4", dark: "#202e78" },
       white: colors.white,
       gray: colors.coolGray,
-      red: colors.red,
+      red: { light: "#b3bcf5", DEFAULT: "#5c6ac4", dark: "#202e78" },
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,

@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: 255, 255, 255;
+    --bg-secondary: 229, 231, 235;
+    --bg-tertiary: 238, 238, 238;
+
+    --text-primary: 0, 0, 0;
+    --text-secondary: 56, 63, 74;
+    --text-tertiary: 255, 255, 255;
+
+    --color-base: 255, 255, 255;
+
+    --color-orange: 205, 246, 247;
+  }
+
+  .dark {
+    --bg-primary: 0, 0, 0;
+    /* 17, 24, 39; */
+    --bg-secondary: 55, 65, 81;
+    --bg-tertiary: 138, 238, 238;
+
+    --text-primary: 255, 255, 255;
+    --text-secondary: 107, 114, 128;
+    --text-tertiary: 155, 255, 255;
+    --color-base: 17, 24, 39; /* 0, 30, 60; /* #001e3c; /* gray-900 */
+    --color-text-base: 243, 244, 246; /* gray-100 */
+    --color-off-base: 31, 41, 55; /* gray-800 */
+    --color-text-muted: 229, 231, 235; /* gray-200 */
+    --color-muted-offset: 209, 213, 219; /* gray-300 */
+    --color-primary: 147, 197, 253; /* blue-300 */
+    --color-secondary: 96, 165, 250; /* blue-400 */
+  }
+}
