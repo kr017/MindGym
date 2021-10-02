@@ -7,7 +7,7 @@ import {
   Leaderboard,
   Logout,
 } from "../../svg";
-import { User } from "../../images";
+// import { User } from "../../images";
 import { useHistory } from "react-router-dom";
 export const Sidebar = () => {
   const { userDispatch } = useLogin();
