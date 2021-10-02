@@ -2,9 +2,8 @@ import axios from "axios";
 // import { useLogin } from "../context";
 
 const axiosClient = axios.create({
-  baseURL:
-    // `https://mind-gym.herokuapp.com/`,
-    `http://localhost:9000/`,
+  baseURL: `https://mind-gym.herokuapp.com/`,
+  // `http://localhost:9000/`,
 
   // baseURL: `http://13.126.37.93:5500/`,
   headers: {

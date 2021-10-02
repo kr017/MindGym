@@ -5,10 +5,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { PrivateRoutes } from "./PrivateRoutes";
 
 import { Login, Signup, Dashboard } from "./components";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster />
       <Switch>
         <div className="bg-base h-screen overflow-hidden">
           <PrivateRoutes path="/" component={Dashboard} exact />{" "}

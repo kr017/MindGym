@@ -4,13 +4,12 @@ import { useHistory } from "react-router-dom";
 import { useFormik, FormikProvider } from "formik";
 import * as yup from "yup";
 
-import { toast } from "react-toastify";
-
 import { Input, Button } from "../Common";
 import { Header } from "../../components";
 
 // import { useLogin } from "../../context";
 import { signup } from "../../apis/userService";
+import toast from "react-hot-toast";
 
 export const Signup = () => {
   const history = useHistory();
@@ -48,16 +47,17 @@ export const Signup = () => {
           // setLoading(false);
 
           if (res.status === 200) {
+            toast.success("Login Successful", {
+              position: "top-center",
+            });
           } else {
           }
         })
         .catch(error => {
-          toast.error("Error Notification !", {
-            position: toast.POSITION.TOP_LEFT,
+          toast.error("Something went wrong please try again", {
+            position: "top-center",
           });
-          if (error?.response?.status === 400) {
-          } else {
-          }
+
           // setLoading(false);
         });
     },

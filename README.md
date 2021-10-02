@@ -1,10 +1,10 @@
 # Myntra Clone
 
-Live Project [URL](http://13.126.37.93:5500/)
+Live Project [URL](https://mindgym-kiranmate.netlify.app/)
 
-[Project Source UI](https://github.com/kr017/MyntraUI)
+[Project Source UI](https://github.com/kr017/MindGym)
 
-[Project Source Server](https://github.com/kr017/MyntraBackend)
+[Project Source Server](https://github.com/kr017/MindGym_Server)
 
 ## Description
 

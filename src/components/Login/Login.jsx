@@ -8,7 +8,7 @@ import { Header } from "../../components";
 
 import { useLogin } from "../../context";
 import { login } from "../../apis/userService";
-
+import toast from "react-hot-toast";
 export const Login = () => {
   const history = useHistory();
   // const [loading, setLoading] = useState(false);
@@ -39,23 +39,16 @@ export const Login = () => {
           userDispatch({ type: "LOGIN", payload: res.data.data });
           if (res?.data?.data?.token) {
             localStorage.setItem("hint", JSON.stringify(res.data.data));
+            toast.error("Login successful", {
+              position: "top-center",
+            });
             history.push("/");
           }
         })
         .catch(error => {
-          // toast.success("🦄 Wow so easy!", {
-          //   position: "top-center",
-          //   autoClose: 5000,
-          //   hideProgressBar: false,
-          //   closeOnClick: true,
-          //   pauseOnHover: true,
-          //   draggable: true,
-          //   progress: undefined,
-          // });
-          if (error?.response?.status === 400) {
-          } else {
-          }
-          alert("Seomething went wrong please try again");
+          toast.error("Something went wrong please try again", {
+            position: "top-center",
+          });
         });
     },
   });
