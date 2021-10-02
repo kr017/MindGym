@@ -39,7 +39,7 @@ export const Login = () => {
           userDispatch({ type: "LOGIN", payload: res.data.data });
           if (res?.data?.data?.token) {
             localStorage.setItem("hint", JSON.stringify(res.data.data));
-            toast.error("Login successful", {
+            toast.success("Login successful", {
               position: "top-center",
             });
             history.push("/");
