@@ -4,7 +4,6 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { NavTile } from "./Sidebar/NavTile";
 
 import { Dashboard } from "./Dashboard/Dashboard";
-import { DashboardContent } from "./Dashboard/DashboardContent";
 
 import { Quiz } from "./Quiz/Quiz";
 import { QuestionCard } from "./Question/QuestionCard";
@@ -22,7 +21,6 @@ export {
   Header,
   Sidebar,
   Dashboard,
-  DashboardContent,
   CategoriesList,
   CategoryTile,
   Login,

@@ -1,4 +1,4 @@
-import { Header, Sidebar, DashboardContent } from "../../components";
+import { Header, Sidebar, CategoriesList } from "../../components";
 
 export const Dashboard = () => {
   return (
@@ -6,7 +6,7 @@ export const Dashboard = () => {
       <Header />
       <div className="flex flex-row ">
         <Sidebar />
-        <DashboardContent />
+        <CategoriesList />
       </div>
     </div>
   );

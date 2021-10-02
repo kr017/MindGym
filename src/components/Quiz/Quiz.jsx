@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
-import { QuestionCard } from "../../components";
+import { Header, Sidebar, QuestionCard } from "../../components";
 import { addScore, getQuestions } from "../../apis/userService";
 import { useQuiz } from "../../context";
 import { DialogBox } from "../Common";
@@ -82,57 +82,63 @@ export const Quiz = () => {
   };
 
   return (
-    <div className="m-4 ">
-      <div className="text-3xl text-center">Score {score}</div>
-      <div className="flex justify-between mx-4">
-        {currentIndex > 0 ? (
-          <span
-            className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
-            onClick={handlePrevClick}
-          >
-            BACK
-          </span>
-        ) : (
-          <span className="p-4 bg-gray-100 dark:bg-gray-600  cursor-not-allowed rounded-md	">
-            BACK
-          </span>
-        )}
+    <div>
+      <Header />
+      <div className="flex flex-row ">
+        <Sidebar />
+        <div className="m-4 ">
+          <div className="text-3xl text-center">Score {score}</div>
+          <div className="flex justify-between mx-4">
+            {currentIndex > 0 ? (
+              <span
+                className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
+                onClick={handlePrevClick}
+              >
+                BACK
+              </span>
+            ) : (
+              <span className="p-4 bg-gray-100 dark:bg-gray-600  cursor-not-allowed rounded-md	">
+                BACK
+              </span>
+            )}
 
-        {currentIndex === quizState?.questions?.length - 1 ? (
-          <span
-            className="p-4 bg-green-600 cursor-pointer rounded-md	"
-            onClick={() => {
-              handleFinishClick();
-            }}
-          >
-            FINISH
-          </span>
-        ) : (
-          <span
-            className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
-            onClick={() => {
-              handleNextClick();
-            }}
-          >
-            NEXT
-          </span>
-        )}
+            {currentIndex === quizState?.questions?.length - 1 ? (
+              <span
+                className="p-4 bg-green-600 cursor-pointer rounded-md	"
+                onClick={() => {
+                  handleFinishClick();
+                }}
+              >
+                FINISH
+              </span>
+            ) : (
+              <span
+                className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
+                onClick={() => {
+                  handleNextClick();
+                }}
+              >
+                NEXT
+              </span>
+            )}
+          </div>
+          <QuestionCard
+            currentIndex={currentIndex + 1}
+            details={currentQuestion}
+            handleNextClick={handleNextClick}
+            handlePrevClick={handlePrevClick}
+          />
+          {showWarning ? (
+            <DialogBox
+              message={"Are you sure? "}
+              primaryActionLabel="Yes"
+              primaryActionHandler={submitQuiz}
+              secondaryActionLabel="No"
+              secondaryActionHandler={() => setShowWarning(false)}
+            />
+          ) : null}
+        </div>
       </div>
-      <QuestionCard
-        currentIndex={currentIndex + 1}
-        details={currentQuestion}
-        handleNextClick={handleNextClick}
-        handlePrevClick={handlePrevClick}
-      />
-      {showWarning ? (
-        <DialogBox
-          message={"Are you sure? "}
-          primaryActionLabel="Yes"
-          primaryActionHandler={submitQuiz}
-          secondaryActionLabel="No"
-          secondaryActionHandler={() => setShowWarning(false)}
-        />
-      ) : null}
     </div>
   );
 };
