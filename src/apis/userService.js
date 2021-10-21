@@ -13,7 +13,7 @@ export function signup(data) {
 }
 
 export function getQuestions(data) {
-  return axiosClient.post("/api/getQuestions", { category: "html" });
+  return axiosClient.post("/api/getQuestions", { category: data });
 }
 
 export function addScore(data) {

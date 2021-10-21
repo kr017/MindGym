@@ -5,7 +5,7 @@ import { getQuestions } from "../../apis/userService";
 export const CategoriesList = () => {
   const categoriesList = [
     {
-      label: "HTML",
+      label: "html",
       bgColor: "#4CAF50",
       image: (
         <div className="text-white dark:text-gray-700	">
@@ -14,7 +14,7 @@ export const CategoriesList = () => {
       ),
     },
     {
-      label: "CSS",
+      label: "css",
       bgColor: "#4CAF50",
       image: (
         <div className="text-white dark:text-gray-700	">
@@ -23,7 +23,7 @@ export const CategoriesList = () => {
       ),
     },
     {
-      label: "JS",
+      label: "js",
       bgColor: "#4CAF50",
       image: (
         <div className="text-white dark:text-gray-700	">

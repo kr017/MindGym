@@ -25,7 +25,7 @@ export const CategoryTile = props => {
           </div>{" "}
         </div>
         <div className="rounded-b-2xl pt-4 pb-4 bg-gray-200 text-center	text-lg	font-bold		">
-          <span className="p-4">{label}</span>
+          <span className="p-4 uppercase">{label}</span>
         </div>
       </div>
     </div>
