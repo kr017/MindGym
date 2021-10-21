@@ -47,9 +47,13 @@ export const Signup = () => {
           // setLoading(false);
 
           if (res.status === 200) {
-            toast.success("Login Successful", {
-              position: "top-center",
-            });
+            toast.success(
+              "Signup Successful! Please login with your credentials",
+              {
+                position: "top-center",
+              }
+            );
+            history.push("/login");
           } else {
           }
         })

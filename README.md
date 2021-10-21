@@ -8,19 +8,16 @@ Live Project [URL](https://mindgym-kiranmate.netlify.app/)
 
 ## Description
 
-This project is clone of Mynta WebApp.
+This is a Quiz App.
 
 ### Features
 
 - SignIn
 - SignUp
-- Browse Products based on section
-- Search Products with color, brands.
-- Apply Filters
-- Create, Update, Remove Products from Wishlist
-- Create, Update, Remove Products from Bag
-- Payment Integration With Stripe
-- View Orders
+- Different Categories for Quiz
+- Dynamic Questions at each time of attempting quiz.
+- Leaderboard
+- Dark & Light Mode
 
 ## Tech Stack
 

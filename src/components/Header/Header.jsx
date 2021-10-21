@@ -3,11 +3,12 @@ import Switch from "react-switch";
 import { Moon, Sun } from "../../svg";
 import { Logo } from "../../images";
 export const Header = () => {
-  const [theme, setTheme] = useState(false);
+  let userTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(userTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
-    if (theme) {
+    if (theme === "dark") {
       root.classList.remove("light");
 
       root.classList.add("dark");
@@ -16,6 +17,11 @@ export const Header = () => {
       root.classList.add("light");
     }
   }, [theme]);
+
+  const handleSwitchTheme = () => {
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
     <div className="sticky top-0 z-50">
       <div className="flex justify-between text-secondary shadow-sm p-4">
@@ -35,7 +41,7 @@ export const Header = () => {
           // className="h-32"
           boxShadow={"0 0 2px 3px #DFE4C6"}
           activeBoxShadow={"0 0 2px 3px #3bf"}
-          onChange={() => setTheme(prevtheme => !prevtheme)}
+          onChange={() => handleSwitchTheme()}
           checked={theme}
           checkedIcon={
             <div>
