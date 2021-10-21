@@ -42,7 +42,7 @@ export const Header = () => {
           boxShadow={"0 0 2px 3px #DFE4C6"}
           activeBoxShadow={"0 0 2px 3px #3bf"}
           onChange={() => handleSwitchTheme()}
-          checked={theme}
+          checked={theme === "dark" ? true : false}
           checkedIcon={
             <div>
               <Moon height="28px" width="30px" />
