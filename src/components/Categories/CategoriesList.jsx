@@ -49,7 +49,7 @@ export const CategoriesList = () => {
     >
       {categoriesList.map((cat, index) => (
         // <div cl>
-        <CategoryTile details={cat} key={cat} />
+        <CategoryTile details={cat} key={index} />
       ))}
     </div>
   );

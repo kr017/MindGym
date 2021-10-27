@@ -34,6 +34,13 @@ export const Quiz = () => {
 
   const handleNextClick = ans => {
     if (currentIndex === quizState?.questions?.length - 1) {
+      if (ans) {
+        if (currentQuestion.answer === ans) {
+          setScore(prevScore => prevScore + 4);
+        } else {
+          setScore(prevScore => prevScore - 1);
+        }
+      }
       setShowWarning(true);
     } else {
       let index = quizState?.questions?.findIndex(
@@ -70,8 +77,9 @@ export const Quiz = () => {
   };
 
   const submitQuiz = () => {
+    // handleNextClick();
     let requestParams = {
-      category: "HTML",
+      category: selectedCat.cat,
       score: score,
     };
     addScore(requestParams)
@@ -87,47 +95,54 @@ export const Quiz = () => {
       <div className="flex flex-row ">
         <Sidebar />
         <div className="m-4 ">
-          <div className="text-3xl text-center">Score {score}</div>
-          <div className="flex justify-between mx-4">
-            {currentIndex > 0 ? (
-              <span
-                className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
-                onClick={handlePrevClick}
-              >
-                BACK
-              </span>
-            ) : (
-              <span className="p-4 bg-gray-100 dark:bg-gray-600  cursor-not-allowed rounded-md	">
-                BACK
-              </span>
-            )}
+          {quizState?.questions?.length > 1 ? (
+            <div>
+              <div className="text-3xl text-center">Score {score}</div>
+              <div className="flex justify-between mx-4">
+                {currentIndex > 0 ? (
+                  <span
+                    className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
+                    onClick={handlePrevClick}
+                  >
+                    BACK
+                  </span>
+                ) : (
+                  <span className="p-4 bg-gray-100 dark:bg-gray-600  cursor-not-allowed rounded-md	">
+                    BACK
+                  </span>
+                )}
 
-            {currentIndex === quizState?.questions?.length - 1 ? (
-              <span
-                className="p-4 bg-green-600 cursor-pointer rounded-md	"
-                onClick={() => {
-                  handleFinishClick();
-                }}
-              >
-                FINISH
-              </span>
-            ) : (
-              <span
-                className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
-                onClick={() => {
-                  handleNextClick();
-                }}
-              >
-                NEXT
-              </span>
-            )}
-          </div>
-          <QuestionCard
-            currentIndex={currentIndex + 1}
-            details={currentQuestion}
-            handleNextClick={handleNextClick}
-            handlePrevClick={handlePrevClick}
-          />
+                {currentIndex === quizState?.questions?.length - 1 ? (
+                  <span
+                    className="p-4 bg-green-600 cursor-pointer rounded-md	"
+                    onClick={() => {
+                      handleFinishClick();
+                    }}
+                  >
+                    FINISH
+                  </span>
+                ) : (
+                  <span
+                    className="p-4 bg-gray-100 dark:bg-gray-600 cursor-pointer rounded-md	"
+                    onClick={() => {
+                      handleNextClick();
+                    }}
+                  >
+                    NEXT
+                  </span>
+                )}
+              </div>
+              <QuestionCard
+                currentIndex={currentIndex + 1}
+                details={currentQuestion}
+                handleNextClick={handleNextClick}
+                handlePrevClick={handlePrevClick}
+              />
+            </div>
+          ) : (
+            <div> loading</div>
+          )}
+
           {showWarning ? (
             <DialogBox
               message={"Are you sure? "}
