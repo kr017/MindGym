@@ -1,5 +1,4 @@
-# Myntra Clone
-
+# Mind Gym
 Live Project [URL](https://mindgym-kiranmate.netlify.app/)
 
 [Project Source UI](https://github.com/kr017/MindGym)
